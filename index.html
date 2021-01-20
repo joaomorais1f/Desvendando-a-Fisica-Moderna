@@ -9,39 +9,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="intro-container">
+    <header class="intro-header">
+        <h1 class="intro-header-name"> Desvendando a Física Moderna </h1>
+        <span class="intro-game-description"> O <b>Desvendando a Física Moderna</b> é um jogo do tipo <i>Quiz Game </i>
+            que consiste em perguntas baseadas no conteúdo de física moderna.</span>
+    </header>
+    <main class="start-content">
+        <span class="start-description"> Informe seu nome no campo abaixo.</span>
+        <input type="text" class="form-name" name="player" id="player" />
+        <spam class="name-error"> </spam>
+        <button role="button" class="start-game btn"> COMECE A JOGAR </button>
+    </main>
+</div>
+
 <section class="game-container">
     <header class="game-header">
-        <h3 class="question-number"> </h3>
+        <h3 class="game-header-content"> </h3>
     </header>
-    <main class="question-container">
-       <span class="question">
-
-       </span> 
+    <main class="gameplay-container ">
+        <div class="question-container">
+            <span class="question"> </span> 
+        </div>
+        <div class="question-alternatives">
+            <button role="button" class="btn-alternative btn" id="a" value="A"> 
+                <span class="alternative-text-a text"> </span>
+            </button>
+            <button role="button" class="btn-alternative btn" id="b" value="B"> 
+                <span class="alternative-text-b text"> </span>
+            </button>
+            <button role="button" class="btn-alternative btn" id="c" value="C"> 
+                <span class="alternative-text-c text"> </span>
+            </button>
+            <button role="button" class="btn-alternative btn" id="d" value="D"> 
+                <span class="alternative-text-d text"> </span>
+            </button>
+        </div>
+        <footer class="explication-container">
+            <div class="wrong-container">
+                <div class="wrong-alternative">
+                    <i class="far fa-times-circle"></i>
+                    <span> Errado! </span>
+                </div>
+                <div class="explication">
+                    <h3 class="right-alternative"> </h3>
+                    <span class="explication-content"> 
+                    </span>
+                </div>
+            </div>
+            <div class="correct-container">
+                <i class="far fa-check-circle"></i>
+                <span class="correct-description"> Correto! Clique no botão para a próxima pergunta! </span>     
+            </div>
+            <button type="button" class="next-question btn"> Próxima Pergunta </button>
+        </footer>
     </main>
-    <div class="question-alternatives">
-        <button role="button" class="btn-alternative btn" id="a" value="A"> </button>
-        <button role="button" class="btn-alternative btn" id="b" value="B"> </button>
-        <button role="button" class="btn-alternative btn" id="c" value="C"> </button>
-        <button role="button" class="btn-alternative btn" id="d" value="D"> </button>
+    <div class="game-finished">
+        <h4 class="game-name"> Desvendando a Física Moderna </h4>
+        <div class="player-status">
+            <div class="status total">
+                <span class="total-questions"> Total de Perguntas: </span>
+                <span class="questions-number"> 15 </span>
+            </div>
+            <div class="status right">
+                <span class="right-questions"> Acerto(s) </span>
+                <span class="questions-number-right"> 12 </span>
+            </div>
+            <div class="status wrong">
+                <span class="wrong-questions"> Erro(s) </span>
+                <span class="questions-number-wrong"> 15 </span>
+            </div>
+        </div>
     </div>
-    <footer class="explication-container">
-        <div class="wrong-container">
-            <div class="wrong-alternative">
-                <i class="far fa-times-circle"></i>
-                <span> Errado! </span>
-            </div>
-            <div class="explication">
-                <h3 class="right-alternative"> </h3>
-                <span class="explication-content"> 
-                </span>
-            </div>
-        </div>
-        <div class="correct-container">
-            <i class="far fa-check-circle"></i>
-            <span class="correct-description"> Correto! Clique no botão para a próxima pergunta! </span>     
-        </div>
-        <button type="button" class="next-question btn"> Próxima Pergunta </button>
-    </footer>
 </section>
 
 

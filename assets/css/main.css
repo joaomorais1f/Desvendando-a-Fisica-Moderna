@@ -5,11 +5,43 @@
           box-sizing: border-box;
 }
 
-.game-container {
+body, html {
   font-family: 'Poppins', sans-serif;
+}
+
+.intro-container {
+  -webkit-transform: translateY(-300px);
+          transform: translateY(-300px);
+  opacity: 1;
   width: 500px;
-  max-width: 95%;
+  max-width: 100%;
   margin: 20px auto;
+  background: #0094c1;
+  padding-bottom: 20px;
+}
+
+.intro-container .intro-header {
+  padding: 10px 12px 0 12px;
+  text-align: justify;
+}
+
+.intro-container .intro-header .intro-header-name {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.intro-container.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+  -webkit-transition: opacity .5s ease-in-out, -webkit-transform .3s ease;
+  transition: opacity .5s ease-in-out, -webkit-transform .3s ease;
+  transition: transform .3s ease, opacity .5s ease-in-out;
+  transition: transform .3s ease, opacity .5s ease-in-out, -webkit-transform .3s ease;
+}
+
+.intro-container .start-content {
+  padding: 5px 12px 0 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,38 +52,37 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.game-container .game-header {
-  height: 50px;
-  background: green;
-  width: 100%;
+.intro-container .start-content input {
+  border: 0;
+  outline: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  -webkit-box-shadow: 3px 4px 0 #000;
+          box-shadow: 3px 4px 0 #000;
+}
+
+.intro-container .start-content .name-error {
+  margin-top: 10px;
+}
+
+.intro-container .start-content .start-game {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 10px 12px;
 }
 
-.game-container .question-container {
-  width: 100%;
-  height: 180px;
-  overflow-y: auto;
-  background: purple;
-  padding: 12px;
-  text-align: justify;
-}
-
-.game-container .question-container span {
-  font-size: 1rem;
-  color: #fff;
-}
-
-.game-container .btn {
+.btn {
   outline: 0;
   -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
@@ -67,12 +98,77 @@
   font-weight: bold;
 }
 
-.game-container .btn:not(:first-child) {
+.btn:not(:first-child) {
   margin-top: 15px;
 }
 
-.game-container .btn:hover {
+.btn:hover {
   background: #07af3f;
+}
+
+.game-container {
+  position: relative;
+  width: 600px;
+  max-width: 95%;
+  margin: 0 auto auto auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #0094c1;
+  padding: 0 20px 0 20px;
+  margin: 10px auto;
+}
+
+.game-container .gameplay-container {
+  width: 100%;
+  display: none;
+}
+
+.game-container .gameplay-container.play {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.game-container .game-header {
+  margin-top: 10px;
+  height: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-container .question-container {
+  border: 0.2px solid #5c5959;
+  width: 100%;
+  height: 180px;
+  overflow-y: auto;
+  background: #01b45d;
+  padding: 12px;
+  text-align: justify;
+}
+
+.game-container .question-container span {
+  font-size: 1rem;
+  color: #fff;
 }
 
 .game-container .question-alternatives {
@@ -87,10 +183,30 @@
   width: 100%;
 }
 
+.game-container .question-alternatives .btn-alternative {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 50px;
+  text-align: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
 .game-container .explication-container {
   position: relative;
   overflow: hidden;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .game-container .explication-container .wrong-container {
@@ -98,6 +214,7 @@
           transform: translateX(-500px);
   visibility: hidden;
   opacity: 0;
+  width: 100%;
 }
 
 .game-container .explication-container .wrong-container.wrong {
@@ -124,7 +241,8 @@
           transform: translateX(500px);
   visibility: hidden;
   opacity: 0;
-  color: green;
+  color: #000;
+  font-weight: bold;
   font-size: 1.1rem;
 }
 
@@ -149,5 +267,48 @@
   opacity: 1;
   -webkit-transition: visibility .5s ease, opacity .6s ease-in-out;
   transition: visibility .5s ease, opacity .6s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.game-container .game-finished {
+  position: absolute;
+  top: 50px;
+  background: red;
+  width: 100%;
+  padding-top: 10px;
+  display: none;
+}
+
+.game-container .game-finished h4 {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.game-container .game-finished .player-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.game-container .game-finished .player-status .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px;
+}
+
+.game-container .game-finished .player-status .status span:first-child {
+  font-weight: bold;
+}
+
+.game-container .game-finished.show-status {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */
