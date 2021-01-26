@@ -129,7 +129,7 @@ body, html {
     .question-alternatives {
         display: flex;
         flex-direction: column;
-        margin: 20px auto;
+        margin: 20px auto 0 auto;
         width: 100%;
 
         .btn-alternative {
@@ -170,6 +170,7 @@ body, html {
         }
 
         .correct-container {
+            margin-top: 20px;
             position: absolute;
             top: 0;
             left: 0;
@@ -202,7 +203,7 @@ body, html {
     .game-finished {
         position: absolute;
         top: 50px;
-        background: red;
+        background: #0094c1;
         width: 100%;
         padding-top: 10px;
         h4 {
@@ -227,6 +228,11 @@ body, html {
 
         &.show-status {
             display: block;
+        }
+
+        .restart-game {
+            margin: 20px auto;
+            width: 90%;
         }
     }
 }
